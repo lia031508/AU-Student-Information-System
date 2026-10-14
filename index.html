@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal | Arellano University</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div class="login-brand"><img src="arellano-logo.jpg" alt="Arellano University logo" class="login-logo">
+        <h2>ARELLANO UNIVERSITY</h2>
+        <p>STUDENT INFORMATION SYSTEM</p>
+      </div>
+      <h1 class="center-text">Welcome back</h1>
+      <p class="muted intro center-text">Sign in using the student account provided by your administrator.</p>
+
+      <form id="studentLoginForm" novalidate>
+        <div class="field">
+          <label for="studentNumber">Student number</label>
+          <input id="studentNumber" name="studentNumber" type="text" placeholder="e.g. 26-0001" autocomplete="username"
+            required>
+        </div>
+        <div class="field">
+          <label for="studentPassword">Password</label>
+          <div class="password-input-wrap">
+            <input id="studentPassword" name="studentPassword" type="password" placeholder="Enter your password"
+              autocomplete="current-password" required>
+            <button class="password-toggle" type="button" data-toggle-password="studentPassword"
+              aria-label="Show password">Show</button>
+          </div>
+        </div>
+        <button class="button button-primary button-full" type="submit">Sign in as student <span
+            aria-hidden="true">→</span></button>
+        <p id="studentLoginMessage" class="message" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="auth-note">
+        <span class="note-icon">i</span>
+        <p>Don't have an account yet? Please contact your school administrator.</p>
+      </div>
+      <div class="auth-footer"><a href="admin-login.html">Administrator login</a></div>
+    </section>
+    <p class="page-caption">Visit Arellano University on Fb</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

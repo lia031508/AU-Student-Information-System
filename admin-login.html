@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrator Login | Arellano University</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div class="login-brand"><img src="arellano-logo.jpg" alt="Arellano University logo" class="login-logo">
+        <h2>ARELLANO UNIVERSITY</h2>
+        <p>STUDENT INFORMATION SYSTEM</p>
+      </div>
+      <h1 class="center-text">Administrator login</h1>
+      <p class="muted intro center-text">Sign in to create and manage student accounts.</p>
+
+      <form id="adminLoginForm" novalidate>
+        <div class="field">
+          <label for="adminUsername">Username</label>
+          <input id="adminUsername" name="adminUsername" type="text" placeholder="Enter administrator username"
+            autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="adminPassword">Password</label>
+          <div class="password-input-wrap">
+            <input id="adminPassword" name="adminPassword" type="password" placeholder="Enter administrator password"
+              autocomplete="current-password" required>
+            <button class="password-toggle" type="button" data-toggle-password="adminPassword"
+              aria-label="Show password">Show</button>
+          </div>
+        </div>
+        <button class="button button-primary button-full" type="submit">Sign in as administrator <span
+            aria-hidden="true">→</span></button>
+        <p id="adminLoginMessage" class="message" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="demo-box">
+        <strong>Demo administrator account</strong>
+        <p>Username: <code>admin</code></p>
+        <p>Password: <code>Admin123!</code></p>
+      </div>
+      <div class="auth-footer"><a href="main.html">← Back to student login</a></div>
+    </section>
+    <p class="page-caption">Administrator access</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

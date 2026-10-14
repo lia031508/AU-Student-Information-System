@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Student Dashboard | Arellano University</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="app-page">
+  <header class="topbar">
+    <a class="brand" href="student.html">
+      <img src="arellano-logo.jpg" alt="Arellano University logo" class="header-logo">
+      <span>ARELLANO UNIVERSITY<small>Student portal</small></span>
+    </a>
+    <div class="topbar-actions"><span class="user-pill"><span class="online-dot"></span> Student portal</span><button
+        class="button button-outline-light" id="studentLogout" type="button">Log out</button></div>
+  </header>
+
+  <main class="page-container student-page">
+    <section class="welcome-banner">
+      <div>
+        <p class="eyebrow">STUDENT PORTAL</p>
+        <h1>Welcome, <span id="viewNameHeading">student</span>!</h1>
+        <p>Your student information is shown below. If anything is incorrect, contact your administrator.</p>
+      </div>
+      <div class="welcome-symbol">✦</div>
+    </section>
+
+    <section class="panel profile-panel">
+      <div class="profile-heading">
+        <div class="avatar" id="studentInitials">S</div>
+        <div>
+          <p class="eyebrow">MY PROFILE</p>
+          <h2 id="viewName">Student Name</h2>
+          <p class="muted">Student number: <strong id="viewNumber">—</strong></p>
+        </div><span id="viewStatusBadge" class="status-badge">—</span>
+      </div>
+      <div class="details-grid">
+        <div class="detail-item"><span>Course / Program</span><strong id="viewCourse">—</strong></div>
+        <div class="detail-item"><span>Year level</span><strong id="viewYear">—</strong></div>
+        <div class="detail-item"><span>Email address</span><strong id="viewEmail">—</strong></div>
+        <div class="detail-item"><span>Phone number</span><strong id="viewPhone">—</strong></div>
+        <div class="detail-item detail-wide"><span>Address</span><strong id="viewAddress">—</strong></div>
+      </div>
+    </section>
+    <div class="student-help"><span class="help-icon">i</span>
+      <p><strong>Need to update your information?</strong><br>Contact your school administrator. You cannot edit
+        official student records from this page.</p>
+    </div>
+    <footer class="app-footer">Student Information System <span>•</span> Student portal</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Students | Arellano University</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="app-page">
+  <header class="topbar">
+    <a class="brand" href="admin.html">
+      <img src="arellano-logo.jpg" alt="Arellano University logo" class="header-logo">
+      <span>ARELLANO UNIVERSITY<small>Administrator workspace</small></span>
+    </a>
+    <div class="topbar-actions"><span class="user-pill"><span class="online-dot"></span> Administrator</span><button
+        class="button button-outline-light" id="adminLogout" type="button">Log out</button></div>
+  </header>
+
+  <main class="page-container">
+    <section class="page-heading">
+      <div>
+        <p class="eyebrow">ADMINISTRATION</p>
+        <h1>Student Management</h1>
+        <p class="muted">Create accounts, update your records list, and find students quickly.</p>
+      </div>
+      <div class="heading-icon">▤</div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card"><span class="stat-label">Total student accounts</span><strong
+          id="studentCount">0</strong><span class="stat-foot">Saved in this browser</span></article>
+      <article class="stat-card"><span class="stat-label">Available courses</span><strong
+          id="courseCount">0</strong><span class="stat-foot">Unique courses in records</span></article>
+      <article class="stat-card"><span class="stat-label">Year levels</span><strong id="yearCount">0</strong><span
+          class="stat-foot">Represented in records</span></article>
+    </section>
+
+    <section class="panel" id="addStudentPanel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">NEW ACCOUNT</p>
+          <h2>Add a student</h2>
+          <p class="muted">The student can sign in after you save their account.</p>
+        </div><span class="panel-icon">＋</span>
+      </div>
+      <form id="studentForm" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="studentNo">Student number <span class="required">*</span></label><input
+              id="studentNo" name="studentNo" type="text" placeholder="e.g. 26-0001" required></div>
+          <div class="field"><label for="fullName">Full name <span class="required">*</span></label><input id="fullName"
+              name="fullName" type="text" placeholder="Enter full name" required></div>
+          <div class="field">
+            <label for="course">Course / Program <span class="required">*</span></label>
+            <select id="course" name="course" required>
+              <option value="">Select a course</option>
+              <option value="BSIT">BSIT - Information Technology</option>
+              <option value="BSCS">BSCS - Computer Science</option>
+              <option value="BSIS">BSIS - Information Systems</option>
+              <option value="BSBA">BSBA - Business Administration</option>
+              <option value="BSA">BSA - Accountancy</option>
+              <option value="BSED">BSED - Secondary Education</option>
+              <option value="BEED">BEED - Elementary Education</option>
+              <option value="BSHM">BSHM - Hospitality Management</option>
+              <option value="BSTM">BSTM - Tourism Management</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field"><label for="year">Year level <span class="required">*</span></label><select id="year"
+              name="year" required>
+              <option value="">Select year level</option>
+              <option>1st Year</option>
+              <option>2nd Year</option>
+              <option>3rd Year</option>
+              <option>4th Year</option>
+            </select></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email"
+              placeholder="student@example.com"></div>
+          <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel"
+              placeholder="Enter phone number"></div>
+          <div class="field field-wide"><label for="address">Address</label><textarea id="address" name="address"
+              rows="2" placeholder="Enter address"></textarea></div>
+          <div class="field"><label for="status">Academic status <span class="required">*</span></label><select
+              id="status" name="status" required>
+              <option value="">Select status</option>
+              <option>Regular</option>
+              <option>Irregular</option>
+              <option>On Leave</option>
+              <option>Dropped</option>
+              <option>Graduated</option>
+            </select></div>
+          <div class="field"><label for="studentPassword">Assign password <span class="required">*</span></label>
+            <div class="password-input-wrap">
+              <input id="studentPassword" name="studentPassword" type="password" minlength="8"
+                placeholder="At least 8 characters" required>
+              <button class="password-toggle" type="button" data-toggle-password="studentPassword"
+                aria-label="Show password">Show</button>
+            </div>
+            <small class="field-hint">Give this password to the student privately.</small>
+          </div>
+        </div>
+        <div class="form-actions">
+          <p id="adminMessage" class="message" role="status" aria-live="polite"></p><button
+            class="button button-success add-student-button" type="submit">+ Add student</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading records-heading">
+        <div>
+          <p class="eyebrow">STUDENT DIRECTORY</p>
+          <h2>Student records</h2>
+          <p class="muted">Search by name or student number and filter by course or year.</p>
+        </div>
+      </div>
+      <div class="filters-grid">
+        <div class="field"><label for="searchStudent">Search records</label><input id="searchStudent" type="search"
+            placeholder="Name or student number"></div>
+        <div class="field"><label for="filterCourse">Course</label><select id="filterCourse">
+            <option value="">All courses</option>
+          </select></div>
+        <div class="field"><label for="filterYear">Year level</label><select id="filterYear">
+            <option value="">All year levels</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+          </select></div>
+        <div class="filter-action"><button class="button button-secondary" id="clearFilters" type="button">Clear
+            filters</button></div>
+      </div>
+      <div class="records-count-row"><span class="records-count" id="visibleCount">0 records</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Student number</th>
+              <th>Full name</th>
+              <th>Course</th>
+              <th>Year level</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentTable">
+            <tr>
+              <td colspan="6" class="empty-cell">No student records yet. Add a student account above.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Note: records are stored in this browser for this demo.</p>
+    </section>
+    <footer class="app-footer">Student Information System <span>•</span> Administrator workspace</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

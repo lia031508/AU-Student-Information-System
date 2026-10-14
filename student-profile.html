@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile | Arellano University</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page student-profile-page">
+  <header class="topbar">
+    <a class="brand" href="admin.html">
+      <img src="arellano-logo.jpg" alt="Arellano University logo" class="header-logo">
+      <span>ARELLANO UNIVERSITY<small>Administrator workspace</small></span>
+    </a>
+    <div class="topbar-actions">
+      <span class="user-pill"><span class="online-dot"></span> Administrator</span>
+      <button class="button button-outline-light" id="adminLogout" type="button">Log out</button>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">STUDENT MANAGEMENT</p>
+        <h1>Student Profile</h1>
+        <p class="muted">View and manage this student's information.</p>
+      </div>
+      <a href="admin.html" class="button button-secondary">Back to Student Records</a>
+    </div>
+
+    <section class="panel profile-panel">
+      <div class="profile-heading">
+        <div class="profile-avatar" id="profileInitials">AU</div>
+        <div>
+          <h2 id="profileName">Student Name</h2>
+          <p class="muted">Student No.: <strong id="profileNumber">—</strong></p>
+          <span id="profileStatus" class="status-badge">Regular</span>
+        </div>
+      </div>
+
+      <div id="profileMessage" class="form-message" role="status"></div>
+
+      <form id="profileForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="profileStudentNo">Student Number</label>
+            <input id="profileStudentNo" type="text" readonly>
+          </div>
+          <div class="field">
+            <label for="profileFullName">Full Name *</label>
+            <input id="profileFullName" type="text" required>
+          </div>
+          <div class="field">
+            <label for="profileCourse">Course / Program *</label>
+            <select id="profileCourse" required>
+              <option value="">Select a course</option>
+              <option value="BSIT">BSIT - Information Technology</option>
+              <option value="BSCS">BSCS - Computer Science</option>
+              <option value="BSIS">BSIS - Information Systems</option>
+              <option value="BSBA">BSBA - Business Administration</option>
+              <option value="BSA">BSA - Accountancy</option>
+              <option value="BSED">BSED - Secondary Education</option>
+              <option value="BEED">BEED - Elementary Education</option>
+              <option value="BSHM">BSHM - Hospitality Management</option>
+              <option value="BSTM">BSTM - Tourism Management</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="profileYear">Year Level *</label>
+            <select id="profileYear" required>
+              <option value="">Select year level</option>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year">3rd Year</option>
+              <option value="4th Year">4th Year</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="profileEmail">Email Address</label>
+            <input id="profileEmail" type="email">
+          </div>
+          <div class="field">
+            <label for="profilePhone">Phone Number</label>
+            <input id="profilePhone" type="text">
+          </div>
+          <div class="field field-full">
+            <label for="profileAddress">Address</label>
+            <textarea id="profileAddress" rows="3"></textarea>
+          </div>
+          <div class="field">
+            <label for="profileAcademicStatus">Academic Status *</label>
+            <select id="profileAcademicStatus" required>
+              <option value="Regular">Regular</option>
+              <option value="Irregular">Irregular</option>
+              <option value="On Leave">On Leave</option>
+              <option value="Graduated">Graduated</option>
+              <option value="Dropped">Dropped</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="profileNewPassword">Change Student Password</label>
+            <div class="password-input-wrap">
+              <input id="profileNewPassword" type="password" minlength="8"
+                placeholder="Enter a new password (leave blank to keep current)">
+              <button class="password-toggle" type="button" data-toggle-password="profileNewPassword"
+                aria-label="Show password">Show</button>
+            </div>
+            <small class="field-hint">Leave blank if you do not want to change the password.</small>
+          </div>
+        </div>
+
+        <div class="profile-actions">
+          <button class="button button-success" type="submit">Save Changes</button>
+          <a href="admin.html" class="button button-secondary">Cancel</a>
+          <button class="button button-danger" type="button" id="deleteProfile">Delete</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
